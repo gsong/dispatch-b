@@ -1,0 +1,19 @@
+name: "Hello World"
+description: "Greet someone and record the time"
+inputs:
+  access_token:
+    description: "GitHub PAT"
+    required: true
+  who_to_greet:
+    description: "Who to greet"
+    required: true
+    default: "World"
+outputs:
+  time: # id of output
+    description: "The time we greeted you"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.who_to_greet }}
+    - ${{ inputs.access_token }}
