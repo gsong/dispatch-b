@@ -10,7 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Hello world action step
-        uses: ./ # Uses an action in the root directory
+        uses: ./.github/actions/repository-dispatch/
         id: hello
         with:
           access_token: ${{ secrets.ACCESS_TOKEN }}
