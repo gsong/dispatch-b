@@ -1,12 +1,10 @@
 on: [push]
 
 jobs:
-  hello_world_job:
+  docker-test:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: Docker container action
     steps:
-      # To use this repository's private action,
-      # you must check out the repository
       - name: Checkout
         uses: actions/checkout@v2
       - name: Hello world action step
@@ -15,6 +13,3 @@ jobs:
         with:
           access_token: ${{ secrets.ACCESS_TOKEN }}
           who_to_greet: "Mona the Octocat"
-      # Use the output from the `hello` step
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
