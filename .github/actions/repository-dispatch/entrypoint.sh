@@ -2,9 +2,8 @@
 
 set -euo pipefail
 
-echo "Hello $1"
-env
 git clone --depth 1 "https://${INPUT_ACCESS_TOKEN}@github.com/gsong/dispatch-a.git" /tmp/dispatch-a
+env
 echo "/tmp/dispatch-a"
 (cd /tmp/dispatch-a && ls -al)
 (cd /tmp/dispatch-a && git remote -v)

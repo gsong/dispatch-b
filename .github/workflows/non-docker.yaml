@@ -25,3 +25,4 @@ jobs:
           echo "${GITHUB_WORKSPACE}"
           (cd "${GITHUB_WORKSPACE}" && ls -al)
           (cd "${GITHUB_WORKSPACE}" && git remote -v)
+          echo "token: ${{ secrets.GITHUB_TOKEN }}"
